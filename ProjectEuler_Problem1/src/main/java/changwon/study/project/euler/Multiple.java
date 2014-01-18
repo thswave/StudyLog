@@ -34,15 +34,20 @@ public class Multiple {
 		return false;
 	}
 	
-	private long getMultipleSum(long number) {
-		long multipleNum	= 0;
+	public long getMultipleSum(long firstNumber) {
+		long termCount	= 0;
+		long lastNumber;
 
+		termCount = getTermCountExcludeLast(firstNumber);
+		lastNumber = firstNumber * termCount;
+		return (termCount*(firstNumber + lastNumber) ) / 2;
+	}
+
+	public long getTermCountExcludeLast(long number) {
 		if(1000 % number == 0)
-			multipleNum = limitInt / number -1;
+			return limitInt / number -1;
 		else
-			multipleNum = limitInt / number;
-
-		return multipleNum*(2*number + (multipleNum-1)*number);
+			return limitInt / number;
 	}
 
 	public long sumOfMulplesByFormula() {
@@ -50,11 +55,11 @@ public class Multiple {
 		sumOfMultiple += getMultipleSum(this.intList.get(0));
 		sumOfMultiple += getMultipleSum(this.intList.get(1));
 		sumOfMultiple -= getMultipleSum(15);
-		sumOfMultiple /= 2;
 		
 		return sumOfMultiple;
 	}
 	
+	public void setIntList(List<Integer> intList) {this.intList = intList;}
 	public int getLimitInt() {	return limitInt; }
 	public void setLimitInt(int limitInt) {	this.limitInt = limitInt;}
 	public List<Integer> getIntList() {	return intList;	}
