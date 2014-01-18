@@ -76,4 +76,12 @@ public class TestEulerProblem1 {
 				multiple.sumOfMulplesByFormula());
 	}
 
+	@Test
+	public void testSumTo100(){
+		int sum = 0;
+		for (int i = 1; i <= 10; i++) {
+			sum += i;
+		}
+		System.out.println(sum);
+	}
 }
