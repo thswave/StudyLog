@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import changwon.study.project.euler.SumPow;
+
 /**
  * @author changwonson
  * 1부터 10까지 자연수를 각각 제곱해 더하면 다음과 같습니다 (제곱의 합).
@@ -18,6 +20,7 @@ public class TestEulerProblem6 {
 	
 	@Test
 	public void test(){
-		fail("fail");
+		SumPow sp = new SumPow(1,100);
+		assertEquals(25164150, sp.getDiffereceSumPow());
 	}
 }

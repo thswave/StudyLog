@@ -1,4 +1,4 @@
-package changwon.study.project.euler.test;
+package changwon.study.project.euler;
 
 public class LCM {
 
