@@ -13,11 +13,9 @@ public class Palidrome {
 
 	public long getMaximumPalindrome() {
 		long maximumPalindrome = 0;
-//		long firstLong = 0;
-//		long secondLong = 0;
 		
-		for (int i = (int) (Math.pow(10, limitDigitCount) - 1); i >= Math.pow(10, limitDigitCount - 1)  ; i--) {
-			for (int j = (int) (Math.pow(10, limitDigitCount) - 1) ; j >= Math.pow(10, limitDigitCount - 1) ; j--) {
+		for (int i = getMaximumInteger(); i >= getMinimumInteger()  ; i--) {
+			for (int j = getMaximumInteger() ; j >= getMinimumInteger() ; j--) {
 				if (isPalidrome( i * j ) && maximumPalindrome < i * j ) {
 					System.out.println("i : " + i + " j : "+ j + " // " + (i*j));
 					maximumPalindrome = i * j;
@@ -25,8 +23,15 @@ public class Palidrome {
 			}
 		}
 		
-//		isPalidrome();
 		return maximumPalindrome;
+	}
+
+	public int getMinimumInteger() {
+		return (int) Math.pow(10, limitDigitCount - 1);
+	}
+
+	public int getMaximumInteger() {
+		return (int) (Math.pow(10, limitDigitCount) - 1);
 	}
 
 	public boolean isPalidrome(long inputInteger) {
