@@ -2,7 +2,7 @@ package changwon.study.project.euler;
 
 public class Palidrome {
 
-	private int limitDigitCount;
+	private int limitDigitCount = 0;
 
 	public Palidrome(int limitDigitCount) {
 		this.limitDigitCount = limitDigitCount;
@@ -15,8 +15,9 @@ public class Palidrome {
 		long maximumPalindrome = 0;
 //		long firstLong = 0;
 //		long secondLong = 0;
-		for (int i = 999; i > 99 ; i--) {
-			for (int j = 999; j > 99; j--) {
+		
+		for (int i = (int) (Math.pow(10, limitDigitCount) - 1); i >= Math.pow(10, limitDigitCount - 1)  ; i--) {
+			for (int j = (int) (Math.pow(10, limitDigitCount) - 1) ; j >= Math.pow(10, limitDigitCount - 1) ; j--) {
 				if (isPalidrome( i * j ) && maximumPalindrome < i * j ) {
 					System.out.println("i : " + i + " j : "+ j + " // " + (i*j));
 					maximumPalindrome = i * j;

@@ -24,7 +24,7 @@ public class TestEulerProblem4 {
 	
 	@Test
 	public void testPalindrome(){
-		Palidrome palidrome = new Palidrome();
+		Palidrome palidrome = new Palidrome(3);
 		assertEquals(906609, palidrome.getMaximumPalindrome());
 	}
 }
