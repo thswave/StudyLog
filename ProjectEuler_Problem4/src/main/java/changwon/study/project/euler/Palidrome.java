@@ -35,28 +35,16 @@ public class Palidrome {
 	}
 
 	public boolean isPalidrome(long inputInteger) {
-//		long originInteger = inputInteger;
-//		
-//		StringBuilder sb = new StringBuilder();
-//		while( inputInteger > 10 ){
-//			sb.append( inputInteger % 10);
-//			inputInteger /= 10;
-//		}
-//		sb.append( inputInteger);
 		return inputInteger == reverse(inputInteger);
 	}
 
 	private long reverse(long inputInteger) {
 		long reverseInteger = 0;
 		long matchInteger = inputInteger;
-//		System.out.println(" input : "+ inputInteger);
-		while ( matchInteger / 10 > 0){
-			reverseInteger = reverseInteger * 10 + matchInteger%10;
+		while ( matchInteger != 0){
+			reverseInteger = reverseInteger * 10 + matchInteger % 10;
 			matchInteger /= 10;
-//			System.out.println(reverseInteger);
 		}
-		reverseInteger = reverseInteger * 10 + matchInteger;
-//		System.out.println("output : " + reverseInteger);
 		return reverseInteger;
 	}
 
