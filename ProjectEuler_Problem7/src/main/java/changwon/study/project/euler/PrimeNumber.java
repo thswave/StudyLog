@@ -3,21 +3,23 @@ package changwon.study.project.euler;
 public class PrimeNumber {
 
 	public long indexOf(int index) {
-		long primeNumber = 3;
-		int count = 1;
+		long primeNumber = 4;
+		int count = 2;
+		boolean isPrimeNumber = true;
 		while (true){
-			for (int i = 2; i < primeNumber; i++) {
+			for (int i = 2; i <= Math.sqrt(primeNumber); i++) {
 				if (primeNumber % i == 0){
+					isPrimeNumber = false;
 					break;
-				} else if( i == primeNumber - 1){
-					count++;
-				}
+				} 
 			}
-			
+			if (isPrimeNumber) {
+				count++;
+			}
 			if ( count == index){
 				return primeNumber;
 			}
-			
+			isPrimeNumber = true;
 			primeNumber++;
 		}
 	}
