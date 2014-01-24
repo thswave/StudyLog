@@ -1,8 +1,10 @@
 package changwon.study.project.euler.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import changwon.study.project.euler.PrimeNumber;
 
 /**
  * @author changwonson
@@ -13,7 +15,9 @@ import org.junit.Test;
 public class TestEulerProblem7 {
 	
 	@Test
-	public void test(){
-		fail("fail");
+	public void testPrimeNumber(){
+		PrimeNumber primeNumber = new PrimeNumber();
+		
+		assertEquals(10001, primeNumber.indexOf(10001));
 	}
 }
