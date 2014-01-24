@@ -18,6 +18,6 @@ public class TestEulerProblem7 {
 	public void testPrimeNumber(){
 		PrimeNumber primeNumber = new PrimeNumber();
 		
-		assertEquals(10001, primeNumber.indexOf(10001));
+		assertEquals(10001, primeNumber.indexOf(101));
 	}
 }

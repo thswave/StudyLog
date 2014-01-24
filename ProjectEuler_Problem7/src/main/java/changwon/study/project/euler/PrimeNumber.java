@@ -3,14 +3,15 @@ package changwon.study.project.euler;
 public class PrimeNumber {
 
 	public long indexOf(int index) {
-		long primeNumber = 2;
-		int count = 0;
+		long primeNumber = 3;
+		int count = 1;
 		while (true){
-			for (int i = 2; i <= Math.sqrt(primeNumber); i++) {
+			for (int i = 2; i < primeNumber; i++) {
 				if (primeNumber % i == 0){
 					break;
-				} 
-				count++;
+				} else if( i == primeNumber - 1){
+					count++;
+				}
 			}
 			
 			if ( count == index){
