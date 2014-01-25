@@ -20,7 +20,10 @@ public class PrimeNumber {
 				return primeNumber;
 			}
 			isPrimeNumber = true;
-			primeNumber++;
+			if ( primeNumber % 2 != 0)
+				primeNumber+=2;
+			else 
+				primeNumber++;
 		}
 	}
 
