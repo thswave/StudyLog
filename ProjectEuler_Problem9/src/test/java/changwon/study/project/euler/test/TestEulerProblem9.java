@@ -26,6 +26,6 @@ public class TestEulerProblem9 {
 	public void testPitagoras(){
 		Pitagoras pitagoras = new Pitagoras();
 		
-		assertEquals(0, pitagoras.productPitagoras());
+		assertEquals(31875000, pitagoras.productPitagoras());
 	}
 }
