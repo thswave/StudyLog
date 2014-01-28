@@ -44,7 +44,8 @@ public class TriangularNumber {
 				divisor++;
 			}
 		}
-		divisorCount *= ++jisu;
+		divisorCount *= jisu;
+		
 		return divisorCount ;
 	}
 
