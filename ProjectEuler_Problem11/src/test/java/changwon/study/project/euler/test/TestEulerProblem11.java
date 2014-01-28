@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import changwon.study.project.euler.Product;
+
 /**
  * @author changwonson
  *  20×20 격자 데이터 (파일명 : input)
@@ -13,8 +15,10 @@ import org.junit.Test;
 public class TestEulerProblem11 {
 	
 	@Test
-	public void test(){
-		fail("fail");
+	public void testMaximumProduct(){
+		
+		Product product = new Product("input");
+		assertEquals(70600674, product.getMaximumProduct());
 	}
 
 }
