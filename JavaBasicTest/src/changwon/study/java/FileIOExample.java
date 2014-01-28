@@ -1,18 +1,16 @@
 package changwon.study.java;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class FileIOExample {
+	
 	public static void main(String[] args){
 		
 		int ch;
 		
-		String str = "49485\n8390";
 		File file = new File("inputData");
 		FileInputStream fis;
 		
