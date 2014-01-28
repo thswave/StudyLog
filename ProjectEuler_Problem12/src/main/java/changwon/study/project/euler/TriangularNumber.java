@@ -1,7 +1,5 @@
 package changwon.study.project.euler;
 
-import java.util.HashMap;
-import java.util.Iterator;
 
 public class TriangularNumber {
 
@@ -33,25 +31,20 @@ public class TriangularNumber {
 	private int getDivisorCount(int triangularNumber) {
 		int divisorCount = 1;
 		int dividend = triangularNumber;
-		HashMap<Integer,Integer> divisorList = new HashMap<Integer,Integer>();
-		
 		int divisor = 2;
+		int jisu = 1; 
+		
 		while (divisor <= dividend){
 			if (dividend % divisor == 0){
-				if (divisorList.containsKey(divisor)){
-					divisorList.put(divisor, divisorList.get(divisor) + 1);
-				} else {
-					divisorList.put(divisor, 1);
-				}
+				jisu++;
 				dividend /= divisor;
 			} else{
+				divisorCount *= jisu;
+				jisu = 1;
 				divisor++;
 			}
 		}
-		Iterator<Integer> itr = divisorList.keySet().iterator();
-		while (itr.hasNext()){
-			divisorCount *= divisorList.get(itr.next()) + 1;
-		}
+		divisorCount *= ++jisu;
 		return divisorCount ;
 	}
 
