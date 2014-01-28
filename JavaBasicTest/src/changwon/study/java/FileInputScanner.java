@@ -27,14 +27,9 @@ public class FileInputScanner {
 			int lineNumber = stck[0].getLineNumber();
 			String fileName = stck[0].getFileName();
 			
-//			logger.error("Exception : " + e.getMessage());
-//			logger.error(className+"."+methodName+"."+fileName+" line "+lineNumber);
+			logger.error("Exception : " + e.getMessage());
+			logger.error(className+"."+methodName+"."+fileName+" line "+lineNumber);
 			
 		}
-//		int num = sc.next();
-		
-//		while(sc.nextInt())
-		
-		
 	}
 }
