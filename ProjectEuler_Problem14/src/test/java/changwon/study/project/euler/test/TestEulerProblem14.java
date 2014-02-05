@@ -12,6 +12,6 @@ public class TestEulerProblem14 {
 	public void testCountOfCalculation(){
 		HailStoneSquence hailStoneSquence = new HailStoneSquence(1000000);
 		
-		assertEquals(0, hailStoneSquence.getMaximumCalculation());
+		assertEquals(847799, hailStoneSquence.getMaximumCalculation());
 	}
 }
