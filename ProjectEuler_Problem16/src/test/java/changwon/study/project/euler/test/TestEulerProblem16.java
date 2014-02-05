@@ -12,6 +12,6 @@ public class TestEulerProblem16 {
 	public void testExponential1000(){
 		Exponential exponential  = new Exponential(1000);
 		
-		assertEquals(0L, exponential.getSumOfEachDigit());
+		assertEquals(1366, exponential.getSumOfEachDigit());
 	}
 }
