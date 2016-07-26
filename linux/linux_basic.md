@@ -426,4 +426,56 @@ chkconfig --level 35 service_name on : 3,5 레벨 on (3: 멀티유저, 5: gui �
 tcpdump tcp port 21
 (나중에 자세히 다뤄보자)
 
+* mount : 파일 시스템 마운트 /etc/fstab 에서 여러가지 설정 확인
+
+`mount [-fnrvw] -t 파일시스템유형 [-o option] 장치명 디렉토리명`
+
+
+* umount : 마운트 해제
+
+umount /mnt/usb
+
+* sync : 업데이트된 모든 버퍼의 데이터를 강제 하드 드라이버에 즉시 저장
+
+
+* losetup : 루프 장치를 정규 파일/블럭 장치와 연결/분리/확인 
+
+
+* mkswap, dd : 
+
+빈파일 생성
+`dd if=/dev/zero of=swapfile bs=1024 count=8192`
+
+
+* spap[off], mkfs.ext3, hdparm : 생략!
+
+* fdisk : 디바이스의 파티션 테이블 생성/변경
+
+* fsck.ext3 : 
+
+* badblocks : badblocks [device_name]
+
+* lsusb, lspci : usb, pci
+
+* mkbootdisk, mkisofs
+
+* chroot : root 디렉토리 변경, 보안적인 측면에서 유용 
+
+* lockfile : procmail 패키지 포함, 새마포어 잠금 파일, 디바이스, 리소스 등을 생성하여 파일 접근 관리. 잠근 파일이 존재하면 다른 프로세스의 접근이 제한 일반적으로 /var/lock 디렉토리에 잠금 파일 생성하고 체크 rm -f [file] 명령으로 삭제 
+
+* flock : lockfile 보다 유용하지 않지만 자금 설정하여 프로세스 접근/사용 차단 flock은 잠금 파일 생성하지 않는다
+
+* mknod : FIFO , 캐릭터 특수, 블럭 특수 파일 만드는데 사용 
+
+* MAKEDEV, tmpwatch : 생략!
+
+#### backup
+
+
+* backup, restore : 정교한 파일 시스템 백업 -f 옵션으로 네트워크 파일 시스템 백업 dump 명령은 저수준 디스크 파티션을 읽고 바이너리 포멧 백업 restore 복원
+
+
+#### system resource
+
+
 
