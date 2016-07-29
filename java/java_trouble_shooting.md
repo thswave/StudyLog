@@ -1,8 +1,8 @@
 # 자바 트러블 슈팅
 
+> 강의 내용을 정리하여 추가 작성 예정!
 
 장애 발생 시 개인적인 판단으로 `단정` 지으면 안된다. 근거를 기반으로 판단해야 한다. 시스템 로그를 분석이 필요
-
 
 
 thread stack 
@@ -29,6 +29,8 @@ CPU 사용량이 높을 때
 ps -eLF | grep 
 4번째 컬럼 : native Id
 
+
+```
 [appadmin@dev-dooray ~]$ ps -eLF|grep 14038
 appadmin 14038 12526 14038  0   20 2816881 844448 6 11:55 pts/1   00:00:00 java InfinitLoop
 appadmin 14038 12526 14039 98   20 2816881 844448 1 11:55 pts/1   00:03:19 java InfinitLoop
@@ -50,6 +52,8 @@ appadmin 14038 12526 14054  0   20 2816881 844448 6 11:55 pts/1   00:00:00 java 
 appadmin 14038 12526 14055  0   20 2816881 844448 1 11:55 pts/1   00:00:00 java InfinitLoop
 appadmin 14038 12526 14056  0   20 2816881 844448 1 11:55 pts/1   00:00:00 java InfinitLoop
 appadmin 14038 12526 14057  0   20 2816881 844448 4 11:55 pts/1   00:00:00 java InfinitLoop
+```
+
 
 00:03:19 cpu time
 
@@ -93,10 +97,11 @@ s 없이 실행 할 경우 ms 단위로 실행
 
 O(Old 열역) 과 FGC 값을 살펴보면 메모리 릭을 판단할 수 있다.
 
+```
 jstat -gccapacity 10913
  NGCMN    NGCMX     `NGC`     S0C   S1C       EC      OGCMN      OGCMX       `OGC`         OC       MCMN     MCMX      MC     CCSMN    CCSMX     CCSC    YGC    FGC
 698880.0 698880.0 698880.0 69120.0 73216.0 549376.0  1398272.0  1398272.0  1398272.0  1398272.0      0.0 1146880.0 109400.0      0.0 1048576.0  12416.0     33     4
-
+```
 
 * 힙 덤프 
 
