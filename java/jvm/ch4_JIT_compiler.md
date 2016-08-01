@@ -139,3 +139,18 @@ tiered level
 가장 좋은 상황은 0 > 3 > 4
 
 서버 컴파일러 큐가 가득 찬경우 2 레벨을 거쳐 3 > 4 로 진행되기도 한다.
+
+
+### 참고 사항 
+
+http://stackoverflow.com/questions/9105505/differences-between-just-in-time-compilation-and-on-stack-replacement
+
+Q. Differences between Just in Time compilation and On Stack Replacement
+
+In general, Just-in-time compilation refers to compiling native code at runtime and executing it instead of (or in addition to) interpreting. Some VMs, such as Google V8, don't even have an interpreter; they JIT compile every function that gets executed (with varying degrees of optimization).
+
+On Stack Replacement (OSR) is a technique for switching between different implementations of the same function. For example, you could use OSR to switch from interpreted or unoptimized code to JITed code as soon as it finishes compiling.
+
+OSR is useful in situations where you identify a function as "hot" while it is running. This might not necessarily be because the function gets called frequently; it might be called only once, but it spends a lot of time in a big loop which could benefit from optimization. When OSR occurs, the VM is paused, and the stack frame for the target function is replaced by an equivalent frame which may have variables in different locations.
+
+OSR can also occur in the other direction: from optimized code to unoptimized code or interpreted code. Optimized code may make some assumptions about the runtime behavior of the program based on past behavior. For instance, you could convert a virtual or dynamic method call into a static call if you've only ever seen one type of receiver object. If it turns out later that these assumptions were wrong, OSR can be used to fall back to a more conservative implementation: the optimized stack frame gets converted into an unoptimized stack frame. If the VM supports inlining, you might even end up converting an optimized stack frame into several unoptimized stack frames
